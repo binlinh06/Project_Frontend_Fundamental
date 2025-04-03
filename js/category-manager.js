@@ -20,9 +20,10 @@ document.addEventListener("DOMContentLoaded", function () {
         errorMessage.style.display = "none";
         addModal.classList.add("active");
         overlay.classList.add("active");
+        console.log("Overlay activated")
 
         if (editRow) {
-            const categoryData = editRow.cells[2].textContent.split(" ");
+            const categoryData = editRow.cells[1].textContent.split(" ");
             const emoji = categoryData.shift();
             const name = categoryData.join(" ");
             categoryNameInput.value = name;
@@ -94,23 +95,10 @@ document.addEventListener("DOMContentLoaded", function () {
     btnConfirmDelete.addEventListener("click", function () {
         if (selectedRow) {
             selectedRow.remove(); // Xóa dòng được chọn
-            updateRowIDs(); // Cập nhật lại ID các dòng còn lại
             closeDeleteModal(); // Đóng modal xác nhận xóa
         }
     });
     
-    function updateRowIDs() {
-        // Lặp qua tất cả các dòng trong bảng và cập nhật lại ID
-        const rows = table.querySelectorAll("tr");
-        let index = 1; // Bắt đầu từ 1
-        rows.forEach((row, rowIndex) => {
-            if (rowIndex > 0) {  // Bỏ qua dòng tiêu đề (nếu có)
-                index++;  // Tăng chỉ số ID
-            }
-        });
-    }
-
-
     btnAdd.addEventListener("click", () => openAddModal());
     btnClose.forEach(button => button.addEventListener("click", closeModal));
     btnHuy.forEach(button => button.addEventListener("click", closeModal));
