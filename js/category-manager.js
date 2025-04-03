@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const categoryEmojiInput = document.getElementById("category-emoji");
     const errorMessage = document.getElementById("error-message");
     const table = document.querySelector(".table tbody");
-
+    let rowCount = 9;
     let selectedRow = null;
 
     function openAddModal(editRow = null) {
@@ -75,16 +75,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
             const newRow = document.createElement("tr");
             newRow.innerHTML = `
-                <td>${table.children.length+1}</td>
+                <td>${rowCount}</td>
                 <td>${emoji} ${name}</td>
                 <td>
                     <button class="btn-change">Sửa</button>
                     <button class="btn-delete">Xóa</button>
                 </td>
             `;
-
+            
             table.appendChild(newRow);
             addEventListenersForRow(newRow);
+            rowCount++
         }
 
         closeModal();
@@ -92,12 +93,22 @@ document.addEventListener("DOMContentLoaded", function () {
 
     btnConfirmDelete.addEventListener("click", function () {
         if (selectedRow) {
-            selectedRow.remove();
-            closeDeleteModal();
+            selectedRow.remove(); // Xóa dòng được chọn
+            updateRowIDs(); // Cập nhật lại ID các dòng còn lại
+            closeDeleteModal(); // Đóng modal xác nhận xóa
         }
-        closeDeleteModal();
     });
-
+    
+    function updateRowIDs() {
+        // Lặp qua tất cả các dòng trong bảng và cập nhật lại ID
+        const rows = table.querySelectorAll("tr");
+        let index = 1; // Bắt đầu từ 1
+        rows.forEach((row, rowIndex) => {
+            if (rowIndex > 0) {  // Bỏ qua dòng tiêu đề (nếu có)
+                index++;  // Tăng chỉ số ID
+            }
+        });
+    }
 
 
     btnAdd.addEventListener("click", () => openAddModal());
