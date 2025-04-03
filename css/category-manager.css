@@ -362,13 +362,27 @@ td {
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.5); 
-    display: none; 
+    display: none;
     z-index: 999; /* Đảm bảo nằm trên tất cả */
 }
-
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); 
+    visibility: hidden;  /* Ẩn overlay ban đầu */
+    opacity: 0;          /* Ẩn nội dung */
+    z-index: 1999;
+    transition: opacity 0.3s ease, visibility 0s 0.3s; /
+}
 /* Hiển thị overlay khi active */
 .overlay.active {
-    display: block;
+    visibility: visible;  /* Hiển thị overlay */
+    opacity: 1;            /* Overlay trở nên mờ dần */
+    transition: opacity 0.3s ease, visibility 0s;
+    z-index: 999;
 }
 
 /* Ẩn form thêm danh mục mặc định */
