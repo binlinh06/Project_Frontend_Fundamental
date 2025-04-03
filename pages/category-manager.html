@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/category-manager.css">
+</head>
+
+<body>
+
+    <nav>
+        <h3>QuizzForge</h3>
+        <ul class="menu">
+            <li><a href="./category-manager.html" style="color:#FFFFFF ;">Danh mục</a></li>
+            <li><a href="./product-manager.html" style="color:#FFFFFF ;">Bài test</a></li>
+            <li><a href="./login.html" style="color:#FFFFFF ;">Đăng xuất</a></li>
+        </ul>
+    </nav>
+
+    <section class="main">
+        <div class="abc">
+            <h3>Quản lý danh mục</h3>
+            <button class="btn-add" id="btn-add">Thêm danh mục</button>
+
+            <table class="table">
+                <tr>
+                    <th>ID</th>
+                    <th>Tên danh mục</th>
+                    <th>Hành động</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>📚 Lịch sử</td>
+                    <td>
+                        <button class="btn-change">Sửa</button>
+                        <button class="btn-delete">Xóa</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>🧠 Khoa học</td>
+                    <td>
+                        <button class="btn-change">Sửa</button>
+                        <button class="btn-delete">Xóa</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>🎤 Giải trí</td>
+                    <td>
+                        <button class="btn-change">Sửa</button>
+                        <button class="btn-delete">Xóa</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>🏠 Đời sống</td>
+                    <td>
+                        <button class="btn-change">Sửa</button>
+                        <button class="btn-delete">Xóa</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>📚 Lịch sử</td>
+                    <td>
+                        <button class="btn-change">Sửa</button>
+                        <button class="btn-delete">Xóa</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>🧠 Khoa học</td>
+                    <td>
+                        <button class="btn-change">Sửa</button>
+                        <button class="btn-delete">Xóa</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>🎤 Giải trí</td>
+                    <td>
+                        <button class="btn-change">Sửa</button>
+                        <button class="btn-delete">Xóa</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td>🧠 Khoa học</td>
+                    <td>
+                        <button class="btn-change">Sửa</button>
+                        <button class="btn-delete">Xóa</button>
+                    </td>
+                </tr>
+                <!-- Các dòng khác -->
+            </table>
+
+            <div class="pagination">
+                <button class="prev">&lt;</button>
+                <button class="page active">1</button>
+                <button class="page">2</button>
+                <button class="page">3</button>
+                <button class="next">&gt;</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Overlay -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Modal Thêm/Sửa danh mục -->
+    <div class="add-category" id="add-modal">
+        <div class="add-head">
+            <h3>Thêm/Sửa danh mục</h3>
+            <button class="close-btn" id="btn-close">&times;</button>
+        </div>
+        <div class="add-main">
+            <label for="category-name">Tên danh mục</label>
+            <input type="text" id="category-name">
+            <span class="error-message" id="error-message" style="display: none;">Tên danh mục đã tồn tại</span>
+
+            <label for="category-emoji">Emoji</label>
+            <input type="text" id="category-emoji">
+            <span class="error-message" id="error-message-emoji" style="display: none;">Emoji không hợp lệ</span>
+        </div>
+        <div class="add-footer">
+            <button class="btn-huy" id="btn-huy">Hủy</button>
+            <button class="btn-luu" id="btn-save">Lưu</button>
+        </div>
+    </div>
+
+    <!-- Modal Xóa danh mục -->
+    <div class="delete-category" id="delete-modal">
+        <div class="delete-head">
+            <h3>Xác nhận xoá</h3>
+            <button class="close-btn" id="btn-close-delete">&times;</button>
+        </div>
+        <div class="delete-main">
+            <p>Bạn chắc chắn muốn xoá danh mục này?</p>
+        </div>
+        <div class="delete-footer">
+            <button class="btn-huy" id="btn-delete-huy">Hủy</button>
+            <button class="btn-confirm-delete" id="btn-confirm-delete">Xóa</button>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>© 2025 Quiz App. All rights reserved.</p>
+    </footer>
+
+    <script src="../js/category-manager.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,131 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #E4E4E7;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Phần tiêu đề */
+.head {
+    text-align: center;
+    margin-bottom: 20px;
+    max-width: 600px;
+}
+
+.head h1 {
+    padding-top: 20px;
+    color: #090914;
+    font-weight: 600;
+    font-size: 52px;
+    line-height: 62px;
+    letter-spacing: -2px;
+    text-align: center;  
+}
+
+.head p {
+    padding-top: 18px;
+    padding-bottom: 22px;
+    color: #52525B;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 30px;
+    text-align: center;
+    max-width: 494px;
+    margin: 0 auto;
+}
+
+/* Form đăng ký */
+.footer {
+    width: 533px;
+    min-height: 484px;
+    background: white;
+    padding: 53px 30px 30px 30px;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+}
+
+.footer input {
+    width: 472px;
+    height: 65px;
+    padding: 16px;
+    margin: 10px 0;
+    gap: 10px;
+    border: 1px solid #E4E4E7;
+    border-radius: 9px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 26px;
+    letter-spacing: 0;
+    text-align: center;
+}
+
+.footer label{
+    color: #000;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 30px;
+    letter-spacing: 0px;
+}
+
+.footer button {
+    width: 472px;
+    height: 65px;
+    line-height: 28px;
+    background-color: #0D6EFD;
+    color: white;
+    border: none;
+    border-radius: 9px;
+    font-size: 16px;
+    letter-spacing: -0.2px;
+    margin-top: 63px;
+    font-weight: 600;
+}
+
+.footer button:hover {
+    background-color: #0056b3;
+}
+
+/* Link đăng nhập */
+.footer p {
+    margin-top: 30px;
+    font-size: 14px;
+    color: #6c757d;
+    text-align: center;
+}
+
+.footer p a {
+    color: #0D6EFD;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.footer p a:hover {
+    text-decoration: underline;
+}
+
+/* Định dạng chung cho thông báo lỗi */
+.error-message {
+    color: #DC3545;
+    font-size: 14px;
+    margin-top: 5px;
+    text-align: left;
+    display: none;
+}
+
+.footer input.error {
+    border: 1px solid #DC3545;
+    background-color: #F8D7DA;
+}
+
+.form-group {
+    margin-bottom: 10px;
+}

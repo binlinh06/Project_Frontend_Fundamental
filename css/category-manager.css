@@ -1,0 +1,418 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+nav {
+    background-color: #212529;
+    color: #FFFFFF;
+    padding: 8px 48px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav h3 {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 30px;
+    letter-spacing: 0;
+}
+
+nav .menu {
+    display: flex;
+    flex-direction: row;
+    gap: 52px;
+}
+
+nav li {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 400;
+    font-size: 16.91px;
+    line-height: 27px;
+    letter-spacing: 0px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    flex: 1
+}
+
+.abc {
+    text-align: center;
+    align-content: center;
+    align-items: center;
+    align-self: center;
+}
+
+.main h3 {
+    padding-top: 20px;
+    font-weight: 500;
+    font-size: 31.01px;
+    line-height: 38.39px;
+    letter-spacing: 0px;
+    text-align: start;
+}
+
+.main .btn-add {
+    margin-top: 24px;
+    padding: 7px 13px;
+    background-color: #0D6EFD;
+    color: #FFFFFF;
+    border-radius: 6px;
+    border: 1px;
+    font-weight: 400;
+    font-size: 15.19px;
+    line-height: 24px;
+    letter-spacing: 0px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+table,
+th,
+td {
+    border: 1px solid #d0d2d4;
+    border-collapse: collapse;
+    margin-top: 17px;
+}
+
+.table tr td:nth-of-type(1),.table tr th:nth-of-type(1){
+    text-align: center;
+    padding: 12px 70px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0px;
+}
+
+.table tr td:nth-of-type(2),.table tr th:nth-of-type(2) {
+    text-align: left;
+    padding: 12px 8px 12px;
+    padding-right: 830px;
+    font-weight: 400;
+    font-size: 16.93px;
+    line-height: 24px;
+    letter-spacing: 0px;
+}
+
+.table tr td:nth-of-type(3),.table tr th:nth-of-type(3){
+    text-align: center;
+    padding: 9px 75px;
+    font-weight: 400;
+    font-size: 14.61px;
+    line-height: 21px;
+    letter-spacing: 0px;
+}
+
+.table tr:nth-of-type(1) {
+    background-color: #212529;
+    color: #FFFFFF;
+}
+
+
+.table tr td button:nth-of-type(1) {
+    margin-right: 5px;
+    background-color: #FFC107;
+    color: #000000;
+    padding: 5px 6px;
+    border-radius: 4px;
+    border: 1px;
+    font-size: 16.93px;
+}
+
+.table tr td button:nth-of-type(2) {
+    margin-right: 5px;
+    background-color: #DC3545;
+    color: #FFFFFF;
+    padding: 5px 9px;
+    border-radius: 4px;
+    border: 1px;
+    font-size: 16.93px;
+}
+
+.table tr:nth-child(even) {
+    background-color: #DEE2E6; /* Màu nền cho hàng chẵn */
+}
+
+.table tr.even-row {
+    background-color: #DEE2E6; /* Áp dụng màu này ngay khi tạo hàng */
+}
+
+.pagination {
+    padding-top: 25px;
+    text-align: center;
+    padding-bottom: 25px;
+}
+
+.pagination button {
+    background: #FFFFFF;
+    padding: 8px 13px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0px;
+    transition: 0.3s;
+    border: 1px solid #DEE2E6;
+}
+
+.pagination button:hover {
+    background: #eee;
+}
+
+.pagination .page {
+    color: #0D6EFD;
+}
+
+.pagination .prev {
+    background-color: #E9ECEF;
+    color: #DEE2E6;
+    border-radius: 6px 6px;
+}
+
+.pagination .active {
+    background: #0D6EFD;
+    color: white;
+}
+
+.add-category {
+    position: fixed;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #FFFFFF;
+    box-shadow:
+        0px 8px 8px -4px #10182808,
+        0px 20px 24px -4px #10182814;
+    border-radius: 8px;
+    width: 480px;
+    height: 334px;
+}
+
+.add-category .add-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 10px;
+    padding-left: 17px;
+    padding-bottom: 18px;
+    font-weight: 500;
+    font-size: 23.3px;
+    line-height: 30px;
+    letter-spacing: 0px;
+    border-bottom: 1px solid #caccce;
+}
+
+.add-category .add-head button {
+    padding-right: 22px;
+    color: #818181;
+    border: none;
+    background-color: white;
+    font-size: 40px;
+}
+
+.add-category .add-main {
+    border-bottom: 1px solid #caccce;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 15px 24px;
+    padding-bottom: 30px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 14px;
+    letter-spacing: 0px;
+    color: #344054;
+}
+
+.add-category .add-main input {
+    padding: 10px 14px;
+    border-radius: 8px;
+    border: 1px solid #D0D5DD;
+}
+
+.add-category .add-footer{
+    padding-top: 12px;
+    display: flex;
+    justify-content: end;
+    gap: 16px;
+    padding-right: 24px;
+    
+}
+
+.add-category .add-footer button {
+    color: white;
+    padding: 8px 15px;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 14px;
+    letter-spacing: 0px;
+}
+
+.add-category .add-footer .btn-huy {
+    background-color: #6C757D;
+    border: 1px solid #6C757D;
+}
+
+.add-category .add-footer .btn-luu {
+    background-color: #0D6EFD;
+    border: 1px solid #0D6EFD;
+}
+
+.delete-category {
+    position: fixed;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #FFFFFF;
+    box-shadow:
+        0px 8px 8px -4px #10182808,
+        0px 20px 24px -4px #10182814;
+    border-radius: 8px;
+    width: 480px;
+    height: 230px;
+}
+
+.delete-category .delete-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 10px;
+    padding-left: 17px;
+    padding-bottom: 10px;
+    font-weight: 500;
+    font-size: 23.3px;
+    line-height: 30px;
+    letter-spacing: 0px;
+    border-bottom: 1px solid #caccce;
+}
+
+.delete-category .delete-head button {
+    padding-right: 22px;
+    color: #818181;
+    border: none;
+    background-color: white;
+    font-size: 40px;
+}
+
+.delete-category .delete-main p {
+    padding: 30px 14px 30px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0px;
+    border-bottom: 1px solid #caccce;
+}
+
+.delete-category .delete-footer{
+    padding-top: 30px;
+    display: flex;
+    justify-content: end;
+    gap: 23px;
+    padding-right: 20px;
+    
+}
+
+.delete-category .delete-footer button {
+    color: white;
+    padding: 8px 15px;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 14px;
+    letter-spacing: 0px;
+}
+
+.delete-category .delete-footer .btn-huy {
+    background-color: #6C757D;
+    border: 1px solid #6C757D;
+}
+
+.delete-category .delete-footer .btn-confirm-delete {
+    background-color: #DC3545;
+    border: 1px solid #DC3545;
+} */
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); 
+    display: none; 
+    z-index: 999; /* Đảm bảo nằm trên tất cả */
+}
+
+/* Hiển thị overlay khi active */
+.overlay.active {
+    display: block;
+}
+
+/* Ẩn form thêm danh mục mặc định */
+.add-category, .delete-category {
+    display: none;
+    z-index: 1000; /* Đảm bảo nằm trên overlay */
+}
+
+/* Hiển thị form khi có class active */
+.add-category.active {
+    display: block;
+}
+
+.delete-category.active {
+    display: block;
+}
+
+
+.footer {
+    padding-top: 24px;
+    font-family: "Inter", sans-serif;
+    background-color: #333333;
+    padding: 16px;
+    text-align: center;
+    color: #FFFFFF;
+    font-weight: 400;
+    font-size: 14.85px;
+    line-height: 24px;
+    letter-spacing: 0px;
+}
+
+/* Định dạng chung cho thông báo lỗi */
+.error-message {
+    color: #DC3545;
+    font-size: 14px;
+    margin-top: 4px;
+    display: none;
+}
+
+.footer input.error {
+    border: 1px solid #DC3545;
+    background-color: #F8D7DA;
+}
+
+.form-group {
+    margin-bottom: 10px;
+}

@@ -1,0 +1,264 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+nav {
+    background-color: #212529;
+    color: #FFFFFF;
+    padding: 8px 48px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav h3 {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 30px;
+    letter-spacing: 0;
+}
+
+nav .menu {
+    display: flex;
+    flex-direction: row;
+    gap: 52px;
+}
+
+nav li {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 400;
+    font-size: 16.91px;
+    line-height: 27px;
+    letter-spacing: 0px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    flex: 1;
+}
+
+.abc {
+    text-align: center;
+    align-content: center;
+    align-items: center;
+    align-self: center;
+}
+
+.main h3 {
+    padding-top: 20px;
+    padding-left: 12px;
+    font-weight: 500;
+    font-size: 31.01px;
+    line-height: 38.39px;
+    letter-spacing: 0px;
+    text-align: start;
+}
+
+.function {
+    display: flex;
+    justify-content: space-between;
+}
+
+.function .function-child {
+    margin-top: 24px;
+}
+
+.function .function-child select {
+    width: 150px;
+    height: 38px;
+    border-radius: 6px;
+    border: 1px solid #A9A9A9;
+    padding-left: 12px;
+}
+
+.function .function-child input {
+    width: 220px;
+    height: 38px;
+    border-radius: 6px;
+    border: 1px solid #DEE2E6;
+    color: #A9A9A9;
+    padding-left: 13px;
+    margin-left: 16px;
+}
+
+.function .btn-add {
+    margin-left: 12px;
+    margin-top: 24px;
+    padding: 7px 13px;
+    background-color: #0D6EFD;
+    color: #FFFFFF;
+    border-radius: 6px;
+    border: 1px;
+    font-weight: 400;
+    font-size: 15.19px;
+    line-height: 24px;
+    letter-spacing: 0px;
+}
+
+
+table,
+th,
+td {
+    border: 1px solid #d0d2d4;
+    border-collapse: collapse;
+    margin-left: 13px;
+    margin-top: 17px;
+}
+
+.table tr td:nth-of-type(1) {
+    padding: 8px 25px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0px;
+}
+
+.table tr td:nth-of-type(2) {
+    text-align: left;
+    padding: 12px 8px 12px;
+    padding-right: 230px;
+    font-weight: 400;
+    font-size: 15.69px;
+    line-height: 24px;
+    letter-spacing: 0px;
+}
+
+.table tr td:nth-of-type(3) {
+    text-align: left;
+    padding: 12px 8px 12px;
+    padding-right: 133px;
+    font-weight: 400;
+    font-size: 16.93px;
+    line-height: 24px;
+    letter-spacing: 0px;
+}
+
+.table tr td:nth-of-type(4) {
+    text-align: left;
+    padding: 8px 8px 8px;
+    padding-right: 250px;
+    font-weight: 400;
+    font-size: 17.06px;
+    line-height: 24px;
+    letter-spacing: 0px;
+}
+
+.table tr td:nth-of-type(5) {
+    text-align: left;
+    padding: 8px 8px 8px;
+    padding-right: 90 px;
+    font-weight: 400;
+    font-size: 17.06px;
+    line-height: 24px;
+    letter-spacing: 0px;
+}
+
+.table tr td:nth-of-type(6) {
+    padding: 8px 80px;
+    font-weight: 400;
+    font-size: 13.54px;
+    line-height: 21px;
+    letter-spacing: 0px;
+}
+
+
+.table tr:nth-of-type(1) {
+    background-color: #212529;
+    color: #FFFFFF;
+    font-weight: 800;
+    font-size: 14.72px;
+    line-height: 24px;
+    letter-spacing: 0px;
+}
+
+.table tr td button:nth-of-type(1) {
+    margin-right: 5px;
+    background-color: #FFC107;
+    color: #000000;
+    padding: 5px 6px;
+    border-radius: 4px;
+    border: 1px;
+}
+
+.table tr td button:nth-of-type(2) {
+    margin-right: 5px;
+    background-color: #DC3545;
+    color: #FFFFFF;
+    padding: 5px 9px;
+    border-radius: 4px;
+    border: 1px;
+}
+
+.table tr:nth-child(even) {
+    background-color:  #DEE2E6;
+}
+
+.pagination {
+    padding-top: 25px;
+    text-align: center; 
+    padding-bottom: 25px;
+}
+
+.pagination button {
+    background: #FFFFFF;
+    padding: 8px 13px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0px;
+    transition: 0.3s;
+    border: 1px solid #DEE2E6;
+}
+
+.pagination button:hover {
+    background: #eee;
+}
+
+.pagination .page {
+    color: #0D6EFD;
+}
+
+.pagination .prev {
+    background-color: #E9ECEF;
+    color: #DEE2E6;
+    border-radius: 6px 6px;
+}
+
+.pagination .active {
+    background: #0D6EFD;
+    color: white;
+}
+
+.footer {
+
+    padding-top: 24px;
+    font-family: "Inter", sans-serif;
+    background-color: #333333;
+    padding: 16px;
+    text-align: center;
+    color: #FFFFFF;
+    font-weight: 400;
+    font-size: 14.85px;
+    line-height: 24px;
+    letter-spacing: 0px;
+}
