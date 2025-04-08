@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,9 +12,10 @@
         rel="stylesheet">
     <link rel="stylesheet" href="../css/product-manager.css">
 </head>
+
 <body>
     <nav>
-        <h3>QuizzForge</h3>
+        <h3><a href="./dashboard.html" style="color:#FFFFFF ;">QuizzForge</a></h3>
         <ui class="menu">
             <li><a href="./category-manager.html" style="color:#FFFFFF ;">Danh mục</a></li>
             <li><a href="./product-manager.html" style="color:#FFFFFF ;">Bài test</a></li>
@@ -23,9 +25,9 @@
 
     <section class="main">
         <div class="abc">
-            <h3>Quản lý bài test</h3>   
+            <h3>Quản lý bài test</h3>
             <div class="function">
-                <button class="btn-add">Thêm bài test</button>
+                <button class="btn-add" id="btn-add">Thêm bài test</button>
                 <div class="function-child">
                     <select>
                         <option value="">Sắp xếp theo</option>
@@ -33,26 +35,26 @@
                     <input type="text" placeholder="Tìm kiếm theo tên">
                 </div>
             </div>
-    
-    
+
+
             <table class="table">
                 <tr>
-                    <td>ID</td>
-                    <td>Tên bài test</td>
-                    <td>Danh mục</td>
-                    <td>Số câu hỏi</td>
-                    <td>Thời gian</td>
-                    <td>Hành động</td>
+                    <th>ID</th>
+                    <th>Tên bài test</th>
+                    <th>Danh mục</th>
+                    <th>Số câu hỏi</th>
+                    <th>Thời gian</th>
+                    <th>Hành động</th>
                 </tr>
                 <tr>
                     <td>1</td>
                     <td>History Quiz</td>
                     <td>📚 Lịch sử</td>
                     <td>15</td>
-                    <td>10 min</td>
+                    <td>10 <span>min</span></td>
                     <td>
-                        <button>Sửa</button>
-                        <button>Xóa</button>
+                        <button class="btn-change">Sửa</button>
+                        <button class="btn-delete">Xóa</button>
                     </td>
                 </tr>
                 <tr>
@@ -60,10 +62,10 @@
                     <td>Science Challenge</td>
                     <td>🧠 Khoa học</td>
                     <td>20</td>
-                    <td>15 min</td>
+                    <td>15 <span>min</span></td>
                     <td>
-                        <button>Sửa</button>
-                        <button>Xóa</button>
+                        <button class="btn-change">Sửa</button>
+                        <button class="btn-delete">Xóa</button>
                     </td>
                 </tr>
                 <tr>
@@ -71,10 +73,10 @@
                     <td>Entertainment Trivia</td>
                     <td>🎤 Giải trí</td>
                     <td>10</td>
-                    <td>5 min</td>
+                    <td>5 <span>min</span></td>
                     <td>
-                        <button>Sửa</button>
-                        <button>Xóa</button>
+                        <button class="btn-change">Sửa</button>
+                        <button class="btn-delete">Xóa</button>
                     </td>
                 </tr>
                 <tr>
@@ -82,10 +84,10 @@
                     <td>Entertainment Trivia</td>
                     <td>🎤 Giải trí</td>
                     <td>10</td>
-                    <td>5 min</td>
+                    <td>5 <span>min</span></td>
                     <td>
-                        <button>Sửa</button>
-                        <button>Xóa</button>
+                        <button class="btn-change">Sửa</button>
+                        <button class="btn-delete">Xóa</button>
                     </td>
                 </tr>
                 <tr>
@@ -93,10 +95,10 @@
                     <td>Entertainment Trivia</td>
                     <td>🎤 Giải trí</td>
                     <td>10</td>
-                    <td>5 min</td>
+                    <td>5 <span>min</span></td>
                     <td>
-                        <button>Sửa</button>
-                        <button>Xóa</button>
+                        <button class="btn-change">Sửa</button>
+                        <button class="btn-delete">Xóa</button>
                     </td>
                 </tr>
                 <tr>
@@ -104,10 +106,10 @@
                     <td>Entertainment Trivia</td>
                     <td>🎤 Giải trí</td>
                     <td>10</td>
-                    <td>5 min</td>
+                    <td>5 <span>min</span></td>
                     <td>
-                        <button>Sửa</button>
-                        <button>Xóa</button>
+                        <button class="btn-change">Sửa</button>
+                        <button class="btn-delete">Xóa</button>
                     </td>
                 </tr>
                 <tr>
@@ -115,10 +117,10 @@
                     <td>Entertainment Trivia</td>
                     <td>🎤 Giải trí</td>
                     <td>10</td>
-                    <td>5 min</td>
+                    <td>5 <span>min</span></td>
                     <td>
-                        <button>Sửa</button>
-                        <button>Xóa</button>
+                        <button class="btn-change">Sửa</button>
+                        <button class="btn-delete">Xóa</button>
                     </td>
                 </tr>
                 <tr>
@@ -126,15 +128,14 @@
                     <td>Entertainment Trivia</td>
                     <td>🎤 Giải trí</td>
                     <td>10</td>
-                    <td>5 min</td>
+                    <td>5 <span>min</span></td>
                     <td>
-                        <button>Sửa</button>
-                        <button>Xóa</button>
+                        <button class="btn-change">Sửa</button>
+                        <button class="btn-delete">Xóa</button>
                     </td>
                 </tr>
             </table>
-            
-    
+
             <div class="pagination">
                 <button class="prev">&lt;</button>
                 <button class="page active">1</button>
@@ -143,8 +144,56 @@
                 <button class="next">&gt;</button>
             </div>
         </div>
-        
+
     </section>
+
+    <!-- Overlay -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Modal Sửa bài test -->
+    <div class="change-test" id="change-modal">
+        <div class="change-head">
+            <h3>Sửa bài test</h3>
+            <button class="close-btn" id="btn-close">&times;</button>
+        </div>
+        <div class="change-main">
+            <label for="test-name">Tên bài test</label>
+            <input type="text" id="test-name">
+            <span class="error-message" id="error-message" style="display: none;">Tên danh mục đã tồn tại</span>
+
+            <label for="test-category">Danh mục</label>
+            <input type="text" id="test-category">
+            <span class="error-message" id="error-message" style="display: none;">Tên danh mục đã tồn tại</span>
+
+            <label for="test-question">Số câu hỏi</label>
+            <input type="number" id="test-question">
+            <span class="error-message" id="error-message" style="display: none;">Số câu hỏi không hợp lệ</span>
+
+            <label for="test-time">Thời gian</label>
+            <input type="number" id="test-time">
+            <span class="error-message" id="error-message" style="display: none;">Thời gian không hợp lệ</span>
+
+        </div>
+        <div class="change-footer">
+            <button class="btn-huy" id="btn-huy">Hủy</button>
+            <button class="btn-luu" id="btn-save">Lưu</button>
+        </div>
+    </div>
+
+    <!-- Modal Xóa danh mục -->
+    <div class="delete-test" id="delete-modal">
+        <div class="delete-head">
+            <h3>Xác nhận xoá</h3>
+            <button class="close-btn" id="btn-close-delete">&times;</button>
+        </div>
+        <div class="delete-main">
+            <p>Bạn chắc chắn muốn bài test này?</p>
+        </div>
+        <div class="delete-footer">
+            <button class="btn-huy" id="btn-delete-huy">Hủy</button>
+            <button class="btn-confirm-delete" id="btn-confirm-delete">Xóa</button>
+        </div>
+    </div>
 
     <footer class="footer">
         <p>© 2025 Quiz App. All rights reserved.</p>
@@ -155,4 +204,5 @@
 
     <script src="../js/product-manager.js"></script>
 </body>
+
 </html>

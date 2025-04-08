@@ -1,3 +1,14 @@
+const category = [
+    {id: 1, category: "Lịch sử", categoryEmoji: "📚 "},
+    {id: 2, category: "Khoa học", categoryEmoji: "🧠"},
+    {id: 3, category: "Giải trí", categoryEmoji: "🎤"},
+    {id: 4, category: "Đời sống", categoryEmoji: "🏠"},
+    {id: 5, category: "Lịch sử", categoryEmoji: "📚 "},
+    {id: 6, category: "Khoa học", categoryEmoji: "🧠"},
+    {id: 7, category: "Giải trí", categoryEmoji: "🎤"},
+    {id: 8, category: "Khoa học", categoryEmoji: "🧠"}
+]
+
 document.addEventListener("DOMContentLoaded", function () {
     const overlay = document.getElementById("overlay");
     const addModal = document.getElementById("add-modal");
@@ -12,7 +23,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const categoryEmojiInput = document.getElementById("category-emoji");
     const errorMessage = document.getElementById("error-message");
     const table = document.querySelector(".table tbody");
-
+    let rowCount = 9;
+    const rowsPerPage = 8;
+    let currentPage = 1;
     let selectedRow = null;
 
     function openAddModal(editRow = null) {
@@ -22,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function () {
         overlay.classList.add("active");
 
         if (editRow) {
-            const categoryData = editRow.cells[2].textContent.split(" ");
+            const categoryData = editRow.cells[1].textContent.split(" ");
             const emoji = categoryData.shift();
             const name = categoryData.join(" ");
             categoryNameInput.value = name;
@@ -62,20 +75,12 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
 
-        const allCategories = Array.from(document.querySelectorAll(".table tbody tr td:nth-child(2)")).map(td => td.textContent);
-
         if (selectedRow) {
             selectedRow.cells[1].textContent = `${emoji} ${name}`;
         } else {
-            if (allCategories.includes(`${emoji} ${name}`)) {
-                errorMessage.textContent = "Tên danh mục đã tồn tại!";
-                errorMessage.style.display = "block";
-                return;
-            }
-
             const newRow = document.createElement("tr");
             newRow.innerHTML = `
-                <td>${table.children.length+1}</td>
+                <td>${rowCount}</td>
                 <td>${emoji} ${name}</td>
                 <td>
                     <button class="btn-change">Sửa</button>
@@ -85,6 +90,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             table.appendChild(newRow);
             addEventListenersForRow(newRow);
+            rowCount++
         }
 
         closeModal();
@@ -92,13 +98,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
     btnConfirmDelete.addEventListener("click", function () {
         if (selectedRow) {
-            selectedRow.remove();
-            closeDeleteModal();
+            selectedRow.remove(); // Xóa dòng được chọn
+            closeDeleteModal(); // Đóng modal xác nhận xóa
         }
-        closeDeleteModal();
     });
-
-
 
     btnAdd.addEventListener("click", () => openAddModal());
     btnClose.forEach(button => button.addEventListener("click", closeModal));
@@ -124,6 +127,4 @@ document.addEventListener("DOMContentLoaded", function () {
             openDeleteModal(row);
         });
     }
-
-    document.querySelectorAll(".table tbody tr:not(:first-child)").forEach(addEventListenersForRow);
 });

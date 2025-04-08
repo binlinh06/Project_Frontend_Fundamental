@@ -11,6 +11,12 @@
         rel="stylesheet">
 
     <link rel="stylesheet" href="../css/register.css">
+    <!-- SweetAlert2 CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+
+    <!-- SweetAlert2 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
     <title>Document</title>
 </head>
 
@@ -34,13 +40,13 @@
             </div>
             <div class="form-group">
                 <input type="password" id="password" placeholder="Mật khẩu">
-                <span class="error-message">Mật khẩu ít nhất 6 ký tự</span>
+                <span class="error-message">Mật khẩu ít nhất 8 ký tự</span>
             </div>
             <div class="form-group">
                 <input type="password" id="confirmPassword" placeholder="Xác nhận mật khẩu">
                 <span class="error-message">Mật khẩu không khớp</span>
             </div>
-            <button type="submit">Đăng ký</button>
+            <button type="submit" id="register-btn">Đăng ký</button>
         </form>
         <p>Đã có tài khoản? <a href="./login.html">Đăng nhập</a></p>
     </div>

@@ -14,7 +14,7 @@ html, body {
 nav {
     background-color: #212529;
     color: #FFFFFF;
-    padding: 8px 48px;
+    padding: 13px 48px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -26,8 +26,11 @@ nav h3 {
     font-size: 24px;
     line-height: 30px;
     letter-spacing: 0;
+    transition: 0.3s;
 }
-
+nav h3:hover{
+    transform: scale(1.2);
+}
 nav .menu {
     display: flex;
     flex-direction: row;
@@ -47,8 +50,11 @@ nav li {
 
 a {
     text-decoration: none;
+    transition: 0.3s;
 }
-
+a:hover{
+    transform: scale(1.5);
+}
 .main {
     display: flex;
     flex-direction: column;
@@ -89,6 +95,10 @@ a {
     border-radius: 6px;
     border: 1px solid #A9A9A9;
     padding-left: 12px;
+    transition: 0.3s;
+}
+.function .function-child select:hover{
+    transform: scale(1.1);
 }
 
 .function .function-child input {
@@ -99,6 +109,10 @@ a {
     color: #A9A9A9;
     padding-left: 13px;
     margin-left: 16px;
+    transition: 0.3s;
+}
+.function .function-child input:hover{
+    transform: scale(1.1);
 }
 
 .function .btn-add {
@@ -113,8 +127,12 @@ a {
     font-size: 15.19px;
     line-height: 24px;
     letter-spacing: 0px;
+    transition: 0.3s;
 }
-
+.function .btn-add:hover{
+    transform: scale(1.1);
+    background-color: #2663be;
+}
 
 table,
 th,
@@ -125,7 +143,7 @@ td {
     margin-top: 17px;
 }
 
-.table tr td:nth-of-type(1) {
+.table tr td:nth-of-type(1),.table tr th:nth-of-type(1) {
     padding: 8px 25px;
     font-weight: 400;
     font-size: 16px;
@@ -133,7 +151,7 @@ td {
     letter-spacing: 0px;
 }
 
-.table tr td:nth-of-type(2) {
+.table tr td:nth-of-type(2),.table tr th:nth-of-type(2) {
     text-align: left;
     padding: 12px 8px 12px;
     padding-right: 230px;
@@ -143,7 +161,7 @@ td {
     letter-spacing: 0px;
 }
 
-.table tr td:nth-of-type(3) {
+.table tr td:nth-of-type(3),.table tr th:nth-of-type(3) {
     text-align: left;
     padding: 12px 8px 12px;
     padding-right: 133px;
@@ -153,7 +171,7 @@ td {
     letter-spacing: 0px;
 }
 
-.table tr td:nth-of-type(4) {
+.table tr td:nth-of-type(4),.table tr th:nth-of-type(4) {
     text-align: left;
     padding: 8px 8px 8px;
     padding-right: 250px;
@@ -163,7 +181,7 @@ td {
     letter-spacing: 0px;
 }
 
-.table tr td:nth-of-type(5) {
+.table tr td:nth-of-type(5),.table tr th:nth-of-type(5) {
     text-align: left;
     padding: 8px 8px 8px;
     padding-right: 90 px;
@@ -173,7 +191,7 @@ td {
     letter-spacing: 0px;
 }
 
-.table tr td:nth-of-type(6) {
+.table tr td:nth-of-type(6),.table tr th:nth-of-type(6) {
     padding: 8px 80px;
     font-weight: 400;
     font-size: 13.54px;
@@ -198,8 +216,12 @@ td {
     padding: 5px 6px;
     border-radius: 4px;
     border: 1px;
+    transition: 0.3s;
 }
-
+.table tr td button:nth-of-type(1):hover{
+    transform: scale(1.3);
+    background-color: #f1ba15;
+}
 .table tr td button:nth-of-type(2) {
     margin-right: 5px;
     background-color: #DC3545;
@@ -207,12 +229,197 @@ td {
     padding: 5px 9px;
     border-radius: 4px;
     border: 1px;
+    transition: 0.3s;
+}
+
+.table tr td button:nth-of-type(2):hover{
+    transform: scale(1.3);
+    background-color: #c03442;
 }
 
 .table tr:nth-child(even) {
-    background-color:  #DEE2E6;
+    background-color: #DEE2E6; /* Màu nền cho hàng chẵn */
 }
 
+.table tr.even-row {
+    background-color: #DEE2E6; /* Áp dụng màu này ngay khi tạo hàng */
+}
+.change-test {
+    position: fixed;
+    top: 33%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #FFFFFF;
+    box-shadow:
+        0px 8px 8px -4px #10182808,
+        0px 20px 24px -4px #10182814;
+    border-radius: 8px;
+    width: 480px;
+    min-height: 460px; /* giữ chiều cao tối thiểu */
+    height: auto; /* cho phép tăng theo nội dung */
+    max-height: 90vh; /* tránh vượt khỏi màn hình */
+}
+
+.change-test .change-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 10px;
+    padding-left: 17px;
+    padding-bottom: 18px;
+    font-weight: 500;
+    font-size: 23.3px;
+    line-height: 30px;
+    letter-spacing: 0px;
+    border-bottom: 1px solid #caccce;
+}
+
+.change-test .change-head button {
+    padding-right: 22px;
+    color: #818181;
+    border: none;
+    background-color: white;
+    font-size: 40px;
+}
+
+.change-test .change-main {
+    border-bottom: 1px solid #caccce;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 15px 24px;
+    padding-bottom: 30px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 14px;
+    letter-spacing: 0px;
+    color: #344054;
+}
+
+.change-test .change-main input {
+    padding: 10px 14px;
+    border-radius: 8px;
+    border: 1px solid #D0D5DD;
+}
+
+.change-test .change-footer{
+    padding-top: 12px;
+    display: flex;
+    justify-content: end;
+    gap: 16px;
+    padding-right: 24px;
+    padding-bottom: 12px;
+    
+}
+
+.change-test .change-footer button {
+    color: white;
+    padding: 8px 15px;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 14px;
+    letter-spacing: 0px;
+    transition: 0.3s;
+}
+
+.change-test .change-footer .btn-huy {
+    background-color: #6C757D;
+    border: 1px solid #6C757D;
+}
+
+.change-test .change-footer .btn-huy:hover{
+    transform: scale(1.2);
+}
+
+.change-test .change-footer .btn-luu {
+    background-color: #0D6EFD;
+    border: 1px solid #0D6EFD;
+}
+
+.change-test .change-footer .btn-luu:hover{
+    transform: scale(1.2);
+}
+
+.delete-test {
+    position: fixed;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #FFFFFF;
+    box-shadow:
+        0px 8px 8px -4px #10182808,
+        0px 20px 24px -4px #10182814;
+    border-radius: 8px;
+    width: 480px;
+    height: 230px;
+}
+
+.delete-test .delete-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 10px;
+    padding-left: 17px;
+    padding-bottom: 10px;
+    font-weight: 500;
+    font-size: 23.3px;
+    line-height: 30px;
+    letter-spacing: 0px;
+    border-bottom: 1px solid #caccce;
+}
+
+.delete-test .delete-head button {
+    padding-right: 22px;
+    color: #818181;
+    border: none;
+    background-color: white;
+    font-size: 40px;
+}
+
+.delete-test .delete-main p {
+    padding: 30px 14px 30px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0px;
+    border-bottom: 1px solid #caccce;
+}
+
+.delete-test .delete-footer{
+    padding-top: 30px;
+    display: flex;
+    justify-content: end;
+    gap: 23px;
+    padding-right: 20px;
+    
+}
+
+.delete-test .delete-footer button {
+    color: white;
+    padding: 8px 15px;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 14px;
+    letter-spacing: 0px;
+    transition: 0.3s;
+}
+
+.delete-test .delete-footer .btn-huy {
+    background-color: #6C757D;
+    border: 1px solid #6C757D;
+}
+.delete-test .delete-footer .btn-huy:hover{
+    transform: scale(1.2);
+}
+.delete-test .delete-footer .btn-confirm-delete {
+    background-color: #DC3545;
+    border: 1px solid #DC3545;
+} 
+.delete-test .delete-footer .btn-confirm-delete:hover{
+    transform: scale(1.2);
+}
 .pagination {
     padding-top: 25px;
     text-align: center; 
@@ -249,6 +456,41 @@ td {
     color: white;
 }
 
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); 
+    visibility: hidden;  /* Ẩn overlay ban đầu */
+    opacity: 0;          /* Ẩn nội dung */
+    z-index: 1999;
+    transition: opacity 0.3s ease, visibility 0s 0.3s; /
+}
+/* Hiển thị overlay khi active */
+.overlay.active {
+    visibility: visible;  /* Hiển thị overlay */
+    opacity: 1;            /* Overlay trở nên mờ dần */
+    transition: opacity 0.3s ease, visibility 0s;
+    z-index: 999;
+}
+
+/* Ẩn form thêm danh mục mặc định */
+.change-test, .delete-test {
+    display: none;
+    z-index: 1000; /* Đảm bảo nằm trên overlay */
+}
+
+/* Hiển thị form khi có class active */
+.change-test.active {
+    display: block;
+}
+
+.delete-test.active {
+    display: block;
+}
+
 .footer {
 
     padding-top: 24px;
@@ -261,4 +503,17 @@ td {
     font-size: 14.85px;
     line-height: 24px;
     letter-spacing: 0px;
+}
+
+/* Định dạng chung cho thông báo lỗi */
+.error-message {
+    color: #DC3545;
+    font-size: 14px;
+    margin-top: 4px;
+    display: none;
+}
+
+.footer input.error {
+    border: 1px solid #DC3545;
+    background-color: #F8D7DA;
 }

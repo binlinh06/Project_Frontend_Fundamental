@@ -1,38 +1,75 @@
+const users = [
+    { id:1,fullName:"admin",email: "admin@gmail.com", password: "admin123", role: "admin" },
+];
+
+// Lưu user mẫu nếu chưa có trong localStorage
+if (!localStorage.getItem("users")) {
+    localStorage.setItem("users", JSON.stringify(users));
+}
+
 document.getElementById("loginForm").addEventListener("submit", function (event) {
-    event.preventDefault(); // Ngăn chặn form submit mặc định
+    event.preventDefault();
 
     let isValid = true;
 
-    // Lấy dữ liệu từ form
-    let email = document.getElementById("email");
-    let password = document.getElementById("password");
+    let emailInput = document.getElementById("email");
+    let passwordInput = document.getElementById("password");
 
-    // Hàm kiểm tra email hợp lệ
-    function isValidEmail(email) {
-        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-    }
+    let email = emailInput.value.trim();
+    let password = passwordInput.value;
 
-    // Kiểm tra email
-    if (!isValidEmail(email.value)) {
-        showError(email, "Email không hợp lệ");
+    // Kiểm tra định dạng email
+    if (!isValidEmail(email)) {
+        showError(emailInput, "Email không hợp lệ");
         isValid = false;
     } else {
-        hideError(email);
+        hideError(emailInput);
     }
 
-    // Kiểm tra mật khẩu
-    if (password.value.length < 6) {
-        showError(password, "Mật khẩu ít nhất 6 ký tự");
+    // Kiểm tra độ dài mật khẩu
+    if (password.length < 8) {
+        showError(passwordInput, "Mật khẩu ít nhất 8 ký tự");
         isValid = false;
     } else {
-        hideError(password);
+        hideError(passwordInput);
     }
 
-    // Nếu form hợp lệ, thực hiện đăng nhập
-    if (isValid) {
-        alert("Đăng nhập thành công!");
+    if (!isValid) return;
+
+    const users = JSON.parse(localStorage.getItem("users")) || [];
+    const user = users.find(u => u.email === email && u.password === password);
+
+    if (user) {
+        localStorage.setItem("currentUser", JSON.stringify(user));
+
+        Swal.fire({
+            position: "center",
+            icon: "success",
+            title: "Đăng nhập thành công!",
+            showConfirmButton: false,
+            timer: 1500
+        });
+
+        setTimeout(() => {
+            if (user.role === "admin") {
+                window.location.href = "category-manager.html";
+            } else {
+                window.location.href = "dashboard.html";
+            }
+        }, 1500);
+    } else {
+        Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "Email hoặc mật khẩu không đúng!"
+        });
     }
 });
+
+// Hàm kiểm tra định dạng email
+function isValidEmail(email) {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+}
 
 // Hiển thị lỗi
 function showError(input, message) {

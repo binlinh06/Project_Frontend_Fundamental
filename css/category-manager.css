@@ -16,7 +16,7 @@ body {
 nav {
     background-color: #212529;
     color: #FFFFFF;
-    padding: 8px 48px;
+    padding: 13px 48px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -28,6 +28,10 @@ nav h3 {
     font-size: 24px;
     line-height: 30px;
     letter-spacing: 0;
+    transition: 0.3s;
+}
+nav h3:hover{
+    transform: scale(1.2);
 }
 
 nav .menu {
@@ -49,8 +53,11 @@ nav li {
 
 a {
     text-decoration: none;
+    transition: 0.3s;
 }
-
+a:hover{
+    transform: scale(1.5);
+}
 .main {
     display: flex;
     flex-direction: column;
@@ -88,7 +95,13 @@ a {
     letter-spacing: 0px;
     display: flex;
     justify-content: flex-start;
+    transition: 0.3s;
 }
+.main .btn-add:hover{
+    transform: scale(1.1);
+    background-color: #2663be;
+}
+
 
 table,
 th,
@@ -140,8 +153,12 @@ td {
     border-radius: 4px;
     border: 1px;
     font-size: 16.93px;
+    transition: 0.3s;
 }
-
+.table tr td button:nth-of-type(1):hover{
+    transform: scale(1.3);
+    background-color: #f1ba15;
+}
 .table tr td button:nth-of-type(2) {
     margin-right: 5px;
     background-color: #DC3545;
@@ -150,6 +167,11 @@ td {
     border-radius: 4px;
     border: 1px;
     font-size: 16.93px;
+    transition: 0.3s;
+}
+.table tr td button:nth-of-type(2):hover{
+    transform: scale(1.3);
+    background-color: #c03442;
 }
 
 .table tr:nth-child(even) {
@@ -160,41 +182,7 @@ td {
     background-color: #DEE2E6; /* Áp dụng màu này ngay khi tạo hàng */
 }
 
-.pagination {
-    padding-top: 25px;
-    text-align: center;
-    padding-bottom: 25px;
-}
 
-.pagination button {
-    background: #FFFFFF;
-    padding: 8px 13px;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 24px;
-    letter-spacing: 0px;
-    transition: 0.3s;
-    border: 1px solid #DEE2E6;
-}
-
-.pagination button:hover {
-    background: #eee;
-}
-
-.pagination .page {
-    color: #0D6EFD;
-}
-
-.pagination .prev {
-    background-color: #E9ECEF;
-    color: #DEE2E6;
-    border-radius: 6px 6px;
-}
-
-.pagination .active {
-    background: #0D6EFD;
-    color: white;
-}
 
 .add-category {
     position: fixed;
@@ -269,6 +257,7 @@ td {
     font-size: 16px;
     line-height: 14px;
     letter-spacing: 0px;
+    transition: 0.3s;
 }
 
 .add-category .add-footer .btn-huy {
@@ -276,9 +265,17 @@ td {
     border: 1px solid #6C757D;
 }
 
+.add-category .add-footer .btn-huy:hover{
+    transform: scale(1.2);
+}
+
 .add-category .add-footer .btn-luu {
     background-color: #0D6EFD;
     border: 1px solid #0D6EFD;
+}
+
+.add-category .add-footer .btn-luu:hover{
+    transform: scale(1.2);
 }
 
 .delete-category {
@@ -343,32 +340,77 @@ td {
     font-size: 16px;
     line-height: 14px;
     letter-spacing: 0px;
+    transition: 0.3s;
 }
 
 .delete-category .delete-footer .btn-huy {
     background-color: #6C757D;
     border: 1px solid #6C757D;
 }
-
+.delete-category .delete-footer .btn-huy:hover{
+    transform: scale(1.2);
+}
 .delete-category .delete-footer .btn-confirm-delete {
     background-color: #DC3545;
     border: 1px solid #DC3545;
-} */
+} 
+.delete-category .delete-footer .btn-confirm-delete:hover{
+    transform: scale(1.2);
+}
 
+.pagination {
+    padding-top: 25px;
+    text-align: center;
+    padding-bottom: 25px;
+}
+
+.pagination button {
+    background: #FFFFFF;
+    padding: 8px 13px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0px;
+    transition: 0.3s;
+    border: 1px solid #DEE2E6;
+}
+
+.pagination button:hover {
+    background: #eee;
+}
+
+.pagination .pageNumbers {
+    color: #0D6EFD;
+}
+
+.pagination .prev {
+    background-color: #E9ECEF;
+    color: #DEE2E6;
+    border-radius: 6px 6px;
+}
+
+.pagination .pageNumbers {
+    background: #0D6EFD;
+    color: white;
+}
 .overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5); 
-    display: none; 
-    z-index: 999; /* Đảm bảo nằm trên tất cả */
+    background-color: rgba(0, 0, 0, 0.5); 
+    visibility: hidden;  /* Ẩn overlay ban đầu */
+    opacity: 0;          /* Ẩn nội dung */
+    z-index: 1999;
+    transition: opacity 0.3s ease, visibility 0s 0.3s; /
 }
-
 /* Hiển thị overlay khi active */
 .overlay.active {
-    display: block;
+    visibility: visible;  /* Hiển thị overlay */
+    opacity: 1;            /* Overlay trở nên mờ dần */
+    transition: opacity 0.3s ease, visibility 0s;
+    z-index: 999;
 }
 
 /* Ẩn form thêm danh mục mặc định */
@@ -411,8 +453,4 @@ td {
 .footer input.error {
     border: 1px solid #DC3545;
     background-color: #F8D7DA;
-}
-
-.form-group {
-    margin-bottom: 10px;
 }

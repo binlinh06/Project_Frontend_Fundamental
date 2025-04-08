@@ -7,14 +7,16 @@
     <title>Document</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="../css/category-manager.css">
 </head>
 
 <body>
 
     <nav>
-        <h3>QuizzForge</h3>
+        <h3><a href="./dashboard.html" style="color:#FFFFFF ;">QuizzForge</a></h3>
         <ul class="menu">
             <li><a href="./category-manager.html" style="color:#FFFFFF ;">Danh mục</a></li>
             <li><a href="./product-manager.html" style="color:#FFFFFF ;">Bài test</a></li>
@@ -101,11 +103,9 @@
             </table>
 
             <div class="pagination">
-                <button class="prev">&lt;</button>
-                <button class="page active">1</button>
-                <button class="page">2</button>
-                <button class="page">3</button>
-                <button class="next">&gt;</button>
+                <button onclick="prevPage()" class="prev">&lt;</button>
+                <span id="pageNumbers"></span>
+                <button onclick="nextPage()"class="next">&gt;</button>
             </div>
         </div>
     </section>

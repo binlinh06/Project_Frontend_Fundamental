@@ -1,3 +1,11 @@
+const users = [
+    { id:1,fullName:"admin", email: "admin@gmail.com", password: "admin123", role: "admin" },
+];
+
+// Lưu user mẫu nếu chưa có trong localStorage
+if (!localStorage.getItem("users")) {
+    localStorage.setItem("users", JSON.stringify(users));
+}
 document.getElementById("registerForm").addEventListener("submit", function (event) {
     event.preventDefault(); // Ngăn chặn form submit mặc định
 
@@ -31,8 +39,8 @@ document.getElementById("registerForm").addEventListener("submit", function (eve
     }
 
     // Kiểm tra mật khẩu
-    if (password.value.length < 6) {
-        showError(password, "Mật khẩu ít nhất 6 ký tự");
+    if (password.value.length < 8) {
+        showError(password, "Mật khẩu ít nhất 8 ký tự");
         isValid = false;
     } else {
         hideError(password);
@@ -48,9 +56,37 @@ document.getElementById("registerForm").addEventListener("submit", function (eve
 
     // Nếu form hợp lệ, có thể submit
     if (isValid) {
-        alert("Đăng ký thành công!");
-        // Ở đây có thể gửi form đi bằng AJAX hoặc submit thực sự
+        const users = JSON.parse(localStorage.getItem("users")) || [];
+        const emailExists = users.some(user => user.email === email.value);
+        if (emailExists) {
+            showError(email, "Email đã được đăng ký");
+            return;
+        }
+
+        const newUser = {
+            id: users.length + 1,
+            fullName : fullName.value,
+            email : email.value,
+            password: password.value,
+            role: "user" // Mặc định là user
+        }
+
+        users.push(newUser)
+        localStorage.setItem("users",JSON.stringify(users))
+        Swal.fire({
+            position: "center",
+            icon: "success",
+            title: "Đăng ký thành công!",
+            showConfirmButton: false,
+            timer: 1500
+        });
+
+        // Chờ 1.5 giây rồi chuyển trang
+        setTimeout(() => {
+            window.location.href = "login.html";
+        }, 1500);
     }
+
 });
 
 // Hiển thị lỗi
