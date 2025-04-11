@@ -11,6 +11,11 @@
         href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="../css/category-manager.css">
+    <!-- SweetAlert2 CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+
+    <!-- SweetAlert2 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body>
@@ -30,82 +35,20 @@
             <button class="btn-add" id="btn-add">Thêm danh mục</button>
 
             <table class="table">
-                <tr>
-                    <th>ID</th>
-                    <th>Tên danh mục</th>
-                    <th>Hành động</th>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>📚 Lịch sử</td>
-                    <td>
-                        <button class="btn-change">Sửa</button>
-                        <button class="btn-delete">Xóa</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>🧠 Khoa học</td>
-                    <td>
-                        <button class="btn-change">Sửa</button>
-                        <button class="btn-delete">Xóa</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>🎤 Giải trí</td>
-                    <td>
-                        <button class="btn-change">Sửa</button>
-                        <button class="btn-delete">Xóa</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>4</td>
-                    <td>🏠 Đời sống</td>
-                    <td>
-                        <button class="btn-change">Sửa</button>
-                        <button class="btn-delete">Xóa</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>5</td>
-                    <td>📚 Lịch sử</td>
-                    <td>
-                        <button class="btn-change">Sửa</button>
-                        <button class="btn-delete">Xóa</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>6</td>
-                    <td>🧠 Khoa học</td>
-                    <td>
-                        <button class="btn-change">Sửa</button>
-                        <button class="btn-delete">Xóa</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>7</td>
-                    <td>🎤 Giải trí</td>
-                    <td>
-                        <button class="btn-change">Sửa</button>
-                        <button class="btn-delete">Xóa</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>8</td>
-                    <td>🧠 Khoa học</td>
-                    <td>
-                        <button class="btn-change">Sửa</button>
-                        <button class="btn-delete">Xóa</button>
-                    </td>
-                </tr>
-                <!-- Các dòng khác -->
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Tên danh mục</th>
+                        <th>Hành động</th>
+                    </tr>
+                </thead>
+                <tbody id="categoryTable"></tbody>
             </table>
 
             <div class="pagination">
                 <button onclick="prevPage()" class="prev">&lt;</button>
                 <span id="pageNumbers"></span>
-                <button onclick="nextPage()"class="next">&gt;</button>
+                <button onclick="nextPage()" class="next">&gt;</button>
             </div>
         </div>
     </section>
@@ -122,11 +65,13 @@
         <div class="add-main">
             <label for="category-name">Tên danh mục</label>
             <input type="text" id="category-name">
-            <span class="error-message" id="error-message" style="display: none;">Tên danh mục đã tồn tại</span>
+            <span class="error-message" id="error-message-name"></span>
 
             <label for="category-emoji">Emoji</label>
             <input type="text" id="category-emoji">
-            <span class="error-message" id="error-message-emoji" style="display: none;">Emoji không hợp lệ</span>
+            <span class="error-message" id="error-message-emoji"></span>
+
+
         </div>
         <div class="add-footer">
             <button class="btn-huy" id="btn-huy">Hủy</button>

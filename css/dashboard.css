@@ -251,7 +251,7 @@ a:hover{
 .pagination button:hover {
     background: #eee;
 }
-.pagination .page{
+.pagination .pageNumbers{
     color: #0D6EFD;
 }
 .pagination .prev{
@@ -259,7 +259,7 @@ a:hover{
     color: #DEE2E6;
     border-radius: 6px 6px;
 }
-.pagination .active {
+.pagination .pageNumbers {
     background: #0D6EFD;
     color: white;
 }

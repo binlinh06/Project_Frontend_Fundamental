@@ -5,12 +5,14 @@
     font-family: "Roboto", sans-serif;
 }
 
-html, body {
+html,
+body {
     height: 100%;
     margin: 0;
     display: flex;
     flex-direction: column;
 }
+
 nav {
     background-color: #212529;
     color: #FFFFFF;
@@ -28,9 +30,11 @@ nav h3 {
     letter-spacing: 0;
     transition: 0.3s;
 }
-nav h3:hover{
+
+nav h3:hover {
     transform: scale(1.2);
 }
+
 nav .menu {
     display: flex;
     flex-direction: row;
@@ -52,9 +56,11 @@ a {
     text-decoration: none;
     transition: 0.3s;
 }
-a:hover{
+
+a:hover {
     transform: scale(1.5);
 }
+
 .main {
     display: flex;
     flex-direction: column;
@@ -68,55 +74,116 @@ a:hover{
     align-content: center;
     align-items: center;
     align-self: center;
+    padding-left: 12px;
 }
 
 .main h3 {
-    padding-top: 20px;
-    padding-left: 12px;
+    padding-top: 15px;
     font-weight: 500;
-    font-size: 31.01px;
+    font-size: 31.29px;
     line-height: 38.39px;
     letter-spacing: 0px;
+    color: #212529;
     text-align: start;
 }
 
 .function {
     display: flex;
+    flex-direction: column;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 24px;
+    letter-spacing: 0px;
+    color: #212529;
+}
+
+.function .function-child-1 {
+    display: flex;
+    flex-direction: column;
+    padding-top: 24px;
+    padding-bottom: 15px;
+    gap: 8px;
+    text-align: start;
+}
+
+.function .function-child-1 input {
+    padding: 7px 14px;
+    width: auto;
+    border: 1px solid #DEE2E6;
+    border-radius: 6px;
+    color: #A9A9A9;
+    transition: 0.3s;
+}
+
+.function .function-child-1 input:hover {
+    transform: scale(1.01);
+}
+
+.function .function-child-2 {
+    display: flex;
+    flex-direction: row;
+    color: #212529;
+    text-align: start;
+}
+
+.function .function-child-2 div {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    text-align: start;
+}
+
+.function-child-2 .function-child-category select {
+    padding: 6px 12px;
+    font-size: 15.79px;
+    line-height: 26px;
+    border: 1px solid #DEE2E6;
+    border-radius: 6px;
+    width: 163px;
+    height: 38px;
+    transition: 0.3s;
+}
+
+.function-child-2 .function-child-category select:hover {
+    transform: scale(1.1);
+}
+
+.function-child-2 .function-child-time input {
+    padding: 6px 12px;
+    font-size: 15.79px;
+    line-height: 26px;
+    border: 1px solid #DEE2E6;
+    border-radius: 6px;
+    width: 163px;
+    height: 38px;
+    transition: 0.3s;
+}
+
+.function-child-2 .function-child-time input:hover {
+    transform: scale(1.1);
+}
+
+.function .function-child-2 div:nth-of-type(1) {
+    padding-right: 42px;
+}
+
+.main h4 {
+    padding-top: 24px;
+    font-weight: 500;
+    font-size: 23.35px;
+    line-height: 28.8px;
+    letter-spacing: 0px;
+    color: #212529;
+    text-align: start;
+}
+
+.main .btn {
+    display: flex;
+    flex-direction: row;
     justify-content: space-between;
 }
 
-.function .function-child {
-    margin-top: 24px;
-}
-
-.function .function-child select {
-    width: 150px;
-    height: 38px;
-    border-radius: 6px;
-    border: 1px solid #A9A9A9;
-    padding-left: 12px;
-    transition: 0.3s;
-}
-.function .function-child select:hover{
-    transform: scale(1.1);
-}
-
-.function .function-child input {
-    width: 220px;
-    height: 38px;
-    border-radius: 6px;
-    border: 1px solid #DEE2E6;
-    color: #A9A9A9;
-    padding-left: 13px;
-    margin-left: 16px;
-    transition: 0.3s;
-}
-.function .function-child input:hover{
-    transform: scale(1.1);
-}
-
-.function .btn-add {
-    margin-left: 12px;
+.main .btn-add {
     margin-top: 24px;
     padding: 7px 13px;
     background-color: #0D6EFD;
@@ -124,12 +191,35 @@ a:hover{
     border-radius: 6px;
     border: 1px;
     font-weight: 400;
-    font-size: 15.19px;
+    font-size: 15.39px;
     line-height: 24px;
     letter-spacing: 0px;
+    display: flex;
+    justify-content: flex-start;
     transition: 0.3s;
 }
-.function .btn-add:hover{
+
+.main .btn-add:hover {
+    transform: scale(1.1);
+    background-color: #2663be;
+}
+
+.main .btn-save {
+    margin-top: 24px;
+    padding: 7px 30px;
+    background-color: #0D6EFD;
+    color: #FFFFFF;
+    border-radius: 6px;
+    border: 1px;
+    font-weight: 400;
+    font-size: 16.03px;
+    line-height: 24px;
+    letter-spacing: 0px;
+    display: flex;
+    transition: 0.3s;
+}
+
+.main .btn-save:hover {
     transform: scale(1.1);
     background-color: #2663be;
 }
@@ -139,63 +229,35 @@ th,
 td {
     border: 1px solid #d0d2d4;
     border-collapse: collapse;
-    margin-left: 13px;
     margin-top: 17px;
 }
 
-.table tr td:nth-of-type(1),.table tr th:nth-of-type(1) {
-    padding: 8px 25px;
-    font-weight: 400;
-    font-size: 16px;
+.table tr td:nth-of-type(1),
+.table tr th:nth-of-type(1) {
+    padding: 9px 38px;
+    font-weight: 800;
+    font-size: 14.7px;
     line-height: 24px;
     letter-spacing: 0px;
 }
 
-.table tr td:nth-of-type(2),.table tr th:nth-of-type(2) {
+.table tr td:nth-of-type(2),
+.table tr th:nth-of-type(2) {
     text-align: left;
-    padding: 12px 8px 12px;
-    padding-right: 230px;
+    padding: 12px 11px 12px;
+    padding-right: 907px;
     font-weight: 400;
-    font-size: 15.69px;
+    font-size: 15.9pxpx;
     line-height: 24px;
     letter-spacing: 0px;
 }
 
-.table tr td:nth-of-type(3),.table tr th:nth-of-type(3) {
-    text-align: left;
-    padding: 12px 8px 12px;
-    padding-right: 133px;
+.table tr td:nth-of-type(3),
+.table tr th:nth-of-type(3) {
+    padding: 9px 76px;
     font-weight: 400;
-    font-size: 16.93px;
+    font-size: 14.61px;
     line-height: 24px;
-    letter-spacing: 0px;
-}
-
-.table tr td:nth-of-type(4),.table tr th:nth-of-type(4) {
-    text-align: left;
-    padding: 8px 8px 8px;
-    padding-right: 250px;
-    font-weight: 400;
-    font-size: 17.06px;
-    line-height: 24px;
-    letter-spacing: 0px;
-}
-
-.table tr td:nth-of-type(5),.table tr th:nth-of-type(5) {
-    text-align: left;
-    padding: 8px 8px 8px;
-    padding-right: 90px;
-    font-weight: 400;
-    font-size: 17.06px;
-    line-height: 24px;
-    letter-spacing: 0px;
-}
-
-.table tr td:nth-of-type(6),.table tr th:nth-of-type(6) {
-    padding: 8px 80px;
-    font-weight: 400;
-    font-size: 13.54px;
-    line-height: 21px;
     letter-spacing: 0px;
 }
 
@@ -218,35 +280,40 @@ td {
     border: 1px;
     transition: 0.3s;
 }
-.table tr td button:nth-of-type(1):hover{
+
+.table tr td button:nth-of-type(1):hover {
     transform: scale(1.3);
     background-color: #f1ba15;
 }
+
 .table tr td button:nth-of-type(2) {
     margin-right: 5px;
     background-color: #DC3545;
     color: #FFFFFF;
-    padding: 7px 11px;
+    padding: 5px 9px;
     border-radius: 4px;
     border: 1px;
     transition: 0.3s;
 }
 
-.table tr td button:nth-of-type(2):hover{
+.table tr td button:nth-of-type(2):hover {
     transform: scale(1.3);
     background-color: #c03442;
 }
 
 .table tr:nth-child(odd) {
-    background-color: #DEE2E6; /* Màu nền cho hàng chẵn */
+    background-color: #DEE2E6;
+    /* Màu nền cho hàng chẵn */
 }
 
 .table tr.even-row {
-    background-color: #DEE2E6; /* Áp dụng màu này ngay khi tạo hàng */
+    background-color: #DEE2E6;
+    /* Áp dụng màu này ngay khi tạo hàng */
 }
-.change-test {
+
+.add-test {
     position: fixed;
-    top: 33%;
+    top: 39%;
     left: 50%;
     transform: translate(-50%, -50%);
     background: #FFFFFF;
@@ -255,18 +322,21 @@ td {
         0px 20px 24px -4px #10182814;
     border-radius: 8px;
     width: 480px;
-    min-height: 460px; /* giữ chiều cao tối thiểu */
-    height: auto; /* cho phép tăng theo nội dung */
-    max-height: 90vh; /* tránh vượt khỏi màn hình */
+    min-height: 460px;
+    /* giữ chiều cao tối thiểu */
+    height: auto;
+    /* cho phép tăng theo nội dung */
+    max-height: 90vh;
+    /* tránh vượt khỏi màn hình */
 }
 
-.change-test .change-head {
+.add-test .add-head {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-top: 10px;
-    padding-left: 17px;
-    padding-bottom: 18px;
+    padding-top: 15px;
+    padding-left: 16px;
+    padding-bottom: 17px;
     font-weight: 500;
     font-size: 23.3px;
     line-height: 30px;
@@ -274,82 +344,144 @@ td {
     border-bottom: 1px solid #caccce;
 }
 
-.change-test .change-head button {
-    padding-right: 22px;
+.add-test .add-head button {
+    padding-right: 12px;
     color: #818181;
     border: none;
     background-color: white;
     font-size: 40px;
 }
 
-.change-test .change-main {
+.add-test .add-main {
     border-bottom: 1px solid #caccce;
     display: flex;
     flex-direction: column;
     gap: 8px;
-    padding: 15px 24px;
-    padding-bottom: 30px;
+    padding: 16px;
     font-weight: 500;
     font-size: 16px;
     line-height: 14px;
     letter-spacing: 0px;
-    color: #344054;
+    color: #212529;
 }
 
-.change-test .change-main input {
-    padding: 10px 14px;
-    border-radius: 8px;
-    border: 1px solid #D0D5DD;
+.add-main .question-section {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-bottom: 16px;
 }
 
-.change-test .change-main select {
-    padding: 10px 14px;
-    border-radius: 8px;
-    border: 1px solid #D0D5DD;
+.add-main .question-section input {
+    padding: 10px 12px;
+    border-radius: 6px;
+    border: 1px solid #DEE2E6;
 }
 
-.change-test .change-footer{
+.answer-item {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 8px;
+}
+.checkbox-wrapper{
+    background-color: #F8F9FA;
+}
+.answer-checkbox {
+    margin: 11px 13px;
+    width: 16px;
+    height: 16px;
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+}
+.input-wrapper {
+    position: relative;
+    flex: 1;
+}
+.answer-input {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #DEE2E6;
+    outline: none;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+
+
+.add-test .add-footer {
     padding-top: 12px;
     display: flex;
     justify-content: end;
     gap: 16px;
     padding-right: 24px;
     padding-bottom: 12px;
-    
+
 }
 
-.change-test .change-footer button {
+.add-btn-question {
+    margin-top: 15px;
+    padding: 5px 25px;
+    background-color: #6C757D;
     color: white;
-    padding: 8px 15px;
-    border-radius: 8px;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 14px;
+    border: 1px solid #6C757D;
+    border-radius: 4px;
+    font-weight: 400;
+    font-size: 15.4px;
+    line-height: 21px;
     letter-spacing: 0px;
     transition: 0.3s;
 }
 
-.change-test .change-footer .btn-huy {
+.add-btn-question:hover {
+    transform: scale(1.1);
+}
+.add-test .add-footer button {
+    color: white;
+    border-radius: 8px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0px;
+    transition: 0.3s;
+}
+
+.add-test .add-footer .btn-huy {
+    padding: 7px 25px;
     background-color: #6C757D;
     border: 1px solid #6C757D;
 }
 
-.change-test .change-footer .btn-huy:hover{
+.add-test .add-footer .btn-huy:hover {
     transform: scale(1.2);
 }
 
-.change-test .change-footer .btn-luu {
+.add-test .add-footer .btn-luu {
+    padding: 7px 17px;
     background-color: #0D6EFD;
     border: 1px solid #0D6EFD;
 }
 
-.change-test .change-footer .btn-luu:hover{
+.add-test .add-footer .btn-luu:hover {
     transform: scale(1.2);
 }
 
+.delete-btn {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: red;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+
+
 .delete-test {
     position: fixed;
-    top: 25%;
+    top: 18%;
     left: 50%;
     transform: translate(-50%, -50%);
     background: #FFFFFF;
@@ -392,13 +524,13 @@ td {
     border-bottom: 1px solid #caccce;
 }
 
-.delete-test .delete-footer{
+.delete-test .delete-footer {
     padding-top: 30px;
     display: flex;
     justify-content: end;
     gap: 23px;
     padding-right: 20px;
-    
+
 }
 
 .delete-test .delete-footer button {
@@ -416,50 +548,18 @@ td {
     background-color: #6C757D;
     border: 1px solid #6C757D;
 }
-.delete-test .delete-footer .btn-huy:hover{
+
+.delete-test .delete-footer .btn-huy:hover {
     transform: scale(1.2);
 }
+
 .delete-test .delete-footer .btn-confirm-delete {
     background-color: #DC3545;
     border: 1px solid #DC3545;
-} 
-.delete-test .delete-footer .btn-confirm-delete:hover{
+}
+
+.delete-test .delete-footer .btn-confirm-delete:hover {
     transform: scale(1.2);
-}
-.pagination {
-    padding-top: 25px;
-    text-align: center; 
-    padding-bottom: 25px;
-}
-
-.pagination button {
-    background: #FFFFFF;
-    padding: 8px 13px;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 24px;
-    letter-spacing: 0px;
-    transition: 0.3s;
-    border: 1px solid #DEE2E6;
-}
-
-.pagination button:hover {
-    background: #eee;
-}
-
-.pagination .pageNumbers {
-    color: #0D6EFD;
-}
-
-.pagination .prev {
-    background-color: #E9ECEF;
-    color: #DEE2E6;
-    border-radius: 6px 6px;
-}
-
-.pagination .pageNumbers {
-    background: #0D6EFD;
-    color: white;
 }
 
 .overlay {
@@ -468,28 +568,35 @@ td {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); 
-    visibility: hidden;  /* Ẩn overlay ban đầu */
-    opacity: 0;          /* Ẩn nội dung */
+    background-color: rgba(0, 0, 0, 0.5);
+    visibility: hidden;
+    /* Ẩn overlay ban đầu */
+    opacity: 0;
+    /* Ẩn nội dung */
     z-index: 1999;
-    transition: opacity 0.3s ease, visibility 0s 0.3s; /
+    transition: opacity 0.3s ease, visibility 0s 0.3s;/
 }
+
 /* Hiển thị overlay khi active */
 .overlay.active {
-    visibility: visible;  /* Hiển thị overlay */
-    opacity: 1;            /* Overlay trở nên mờ dần */
+    visibility: visible;
+    /* Hiển thị overlay */
+    opacity: 1;
+    /* Overlay trở nên mờ dần */
     transition: opacity 0.3s ease, visibility 0s;
     z-index: 999;
 }
 
 /* Ẩn form thêm danh mục mặc định */
-.change-test, .delete-test {
+.add-test,
+.delete-test {
     display: none;
-    z-index: 1000; /* Đảm bảo nằm trên overlay */
+    z-index: 1000;
+    /* Đảm bảo nằm trên overlay */
 }
 
 /* Hiển thị form khi có class active */
-.change-test.active {
+.add-test.active {
     display: block;
 }
 
@@ -509,17 +616,4 @@ td {
     font-size: 14.85px;
     line-height: 24px;
     letter-spacing: 0px;
-}
-
-/* Định dạng chung cho thông báo lỗi */
-.error-message {
-    color: #DC3545;
-    font-size: 14px;
-    margin-top: 4px;
-    display: none;
-}
-
-.footer input.error {
-    border: 1px solid #DC3545;
-    background-color: #F8D7DA;
 }

@@ -1,5 +1,5 @@
 const users = [
-    { id:1,fullName:"admin",email: "admin@gmail.com", password: "admin123", role: "admin" },
+    { id: 1, fullName: "admin", email: "admin@gmail.com", password: "admin123", role: "admin" },
 ];
 
 // Lưu user mẫu nếu chưa có trong localStorage
@@ -41,15 +41,23 @@ document.getElementById("loginForm").addEventListener("submit", function (event)
 
     if (user) {
         localStorage.setItem("currentUser", JSON.stringify(user));
-
-        Swal.fire({
-            position: "center",
-            icon: "success",
-            title: "Đăng nhập thành công!",
-            showConfirmButton: false,
-            timer: 1500
-        });
-
+        if (user.role === "admin") {
+            Swal.fire({
+                position: "center",
+                icon: "success",
+                title: "WELLCOME BOSS!",
+                showConfirmButton: false,
+                timer: 1500,
+            });
+        } else {
+            Swal.fire({
+                position: "center",
+                icon: "success",
+                title: "Đăng nhập thành công!",
+                showConfirmButton: false,
+                timer: 1500,
+            });
+        }
         setTimeout(() => {
             if (user.role === "admin") {
                 window.location.href = "category-manager.html";

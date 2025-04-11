@@ -27,121 +27,42 @@
         <div class="abc">
             <h3>Quản lý bài test</h3>
             <div class="function">
-                <button class="btn-add" id="btn-add">Thêm bài test</button>
+                <button class="btn-add" id="btn-add"onclick="window.location.href='add-test.html'">Thêm bài test</button>
                 <div class="function-child">
-                    <select>
+                    <select id="sort-select">
                         <option value="">Sắp xếp theo</option>
+                        <option value="name-asc">Tên A-Z</option>
+                        <option value="name-desc">Tên Z-A</option>
+                        <option value="category-asc">Danh mục A-Z</option>
+                        <option value="category-desc">Danh mục Z-A</option>
+                        <option value="question-asc">Số câu hỏi tăng dần</option>
+                        <option value="question-desc">Số câu hỏi giảm dần</option>
+                        <option value="time-asc">Thời gian tăng dần</option>
+                        <option value="time-desc">Thời gian giảm dần</option>
                     </select>
-                    <input type="text" placeholder="Tìm kiếm theo tên">
+                    <input type="text" id="search-input" placeholder="Tìm kiếm theo tên">
                 </div>
             </div>
 
 
             <table class="table">
-                <tr>
-                    <th>ID</th>
-                    <th>Tên bài test</th>
-                    <th>Danh mục</th>
-                    <th>Số câu hỏi</th>
-                    <th>Thời gian</th>
-                    <th>Hành động</th>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>History Quiz</td>
-                    <td>📚 Lịch sử</td>
-                    <td>15</td>
-                    <td>10 <span>min</span></td>
-                    <td>
-                        <button class="btn-change">Sửa</button>
-                        <button class="btn-delete">Xóa</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Science Challenge</td>
-                    <td>🧠 Khoa học</td>
-                    <td>20</td>
-                    <td>15 <span>min</span></td>
-                    <td>
-                        <button class="btn-change">Sửa</button>
-                        <button class="btn-delete">Xóa</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>Entertainment Trivia</td>
-                    <td>🎤 Giải trí</td>
-                    <td>10</td>
-                    <td>5 <span>min</span></td>
-                    <td>
-                        <button class="btn-change">Sửa</button>
-                        <button class="btn-delete">Xóa</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>4</td>
-                    <td>Entertainment Trivia</td>
-                    <td>🎤 Giải trí</td>
-                    <td>10</td>
-                    <td>5 <span>min</span></td>
-                    <td>
-                        <button class="btn-change">Sửa</button>
-                        <button class="btn-delete">Xóa</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>5</td>
-                    <td>Entertainment Trivia</td>
-                    <td>🎤 Giải trí</td>
-                    <td>10</td>
-                    <td>5 <span>min</span></td>
-                    <td>
-                        <button class="btn-change">Sửa</button>
-                        <button class="btn-delete">Xóa</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>6</td>
-                    <td>Entertainment Trivia</td>
-                    <td>🎤 Giải trí</td>
-                    <td>10</td>
-                    <td>5 <span>min</span></td>
-                    <td>
-                        <button class="btn-change">Sửa</button>
-                        <button class="btn-delete">Xóa</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>7</td>
-                    <td>Entertainment Trivia</td>
-                    <td>🎤 Giải trí</td>
-                    <td>10</td>
-                    <td>5 <span>min</span></td>
-                    <td>
-                        <button class="btn-change">Sửa</button>
-                        <button class="btn-delete">Xóa</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>8</td>
-                    <td>Entertainment Trivia</td>
-                    <td>🎤 Giải trí</td>
-                    <td>10</td>
-                    <td>5 <span>min</span></td>
-                    <td>
-                        <button class="btn-change">Sửa</button>
-                        <button class="btn-delete">Xóa</button>
-                    </td>
-                </tr>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Tên bài test</th>
+                        <th>Danh mục</th>
+                        <th>Số câu hỏi</th>
+                        <th>Thời gian</th>
+                        <th>Hành động</th>
+                    </tr>
+                </thead>
+                <tbody id="categoryTable"></tbody>
             </table>
 
             <div class="pagination">
-                <button class="prev">&lt;</button>
-                <button class="page active">1</button>
-                <button class="page">2</button>
-                <button class="page">3</button>
-                <button class="next">&gt;</button>
+                <button onclick="prevPage()" class="prev">&lt;</button>
+                <span id="pageNumbers"></span>
+                <button onclick="nextPage()" class="next">&gt;</button>
             </div>
         </div>
 
@@ -162,7 +83,7 @@
             <span class="error-message" id="error-message" style="display: none;">Tên danh mục đã tồn tại</span>
 
             <label for="test-category">Danh mục</label>
-            <input type="text" id="test-category">
+            <select id="test-category"></select>
             <span class="error-message" id="error-message" style="display: none;">Tên danh mục đã tồn tại</span>
 
             <label for="test-question">Số câu hỏi</label>

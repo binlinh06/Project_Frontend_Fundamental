@@ -122,21 +122,3 @@ body {
     flex-direction: column;
     margin-bottom: 15px;
 }
-
-/* Định dạng chung cho thông báo lỗi */
-.error-message {
-    color: #DC3545;
-    font-size: 14px;
-    margin-top: 5px;
-    text-align: left;
-    display: none;
-}
-
-.footer input.error {
-    border: 1px solid #DC3545;
-    background-color: #F8D7DA;
-}
-
-.form-group {
-    margin-bottom: 10px;
-}
