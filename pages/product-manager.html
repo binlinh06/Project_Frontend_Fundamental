@@ -27,7 +27,7 @@
         <div class="abc">
             <h3>Quản lý bài test</h3>
             <div class="function">
-                <button class="btn-add" id="btn-add"onclick="window.location.href='add-test.html'">Thêm bài test</button>
+                <button class="btn-add" id="btn-add">Thêm bài test</button>
                 <div class="function-child">
                     <select id="sort-select">
                         <option value="">Sắp xếp theo</option>
@@ -70,37 +70,6 @@
 
     <!-- Overlay -->
     <div class="overlay" id="overlay"></div>
-
-    <!-- Modal Sửa bài test -->
-    <div class="change-test" id="change-modal">
-        <div class="change-head">
-            <h3>Sửa bài test</h3>
-            <button class="close-btn" id="btn-close">&times;</button>
-        </div>
-        <div class="change-main">
-            <label for="test-name">Tên bài test</label>
-            <input type="text" id="test-name">
-            <span class="error-message" id="error-message" style="display: none;">Tên danh mục đã tồn tại</span>
-
-            <label for="test-category">Danh mục</label>
-            <select id="test-category"></select>
-            <span class="error-message" id="error-message" style="display: none;">Tên danh mục đã tồn tại</span>
-
-            <label for="test-question">Số câu hỏi</label>
-            <input type="number" id="test-question">
-            <span class="error-message" id="error-message" style="display: none;">Số câu hỏi không hợp lệ</span>
-
-            <label for="test-time">Thời gian</label>
-            <input type="number" id="test-time">
-            <span class="error-message" id="error-message" style="display: none;">Thời gian không hợp lệ</span>
-
-        </div>
-        <div class="change-footer">
-            <button class="btn-huy" id="btn-huy">Hủy</button>
-            <button class="btn-luu" id="btn-save">Lưu</button>
-        </div>
-    </div>
-
     <!-- Modal Xóa danh mục -->
     <div class="delete-test" id="delete-modal">
         <div class="delete-head">

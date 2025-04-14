@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../css/play.css">
+</head>
+
+<body>
+    <nav>
+        <h3><a href="./dashboard.html" style="color:#FFFFFF ;">QuizzForge</a></h3>
+        <input type="text" id="" placeholder="Tìm kiếm bài test">
+        <ui class="menu">
+            <li>Trang chủ</li>
+            <li><a href="./login.html" style="color:#FFFFFF ;">Đăng xuất</a></li>
+        </ui>
+    </nav>
+    <div class="main">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <h4>Điều hướng nhanh</h4>
+            <div class="nav-grid">
+                <button class="active">1</button>
+                <button>2</button>
+                <button>3</button>
+                <button>4</button>
+                <button>5</button>
+                <button>6</button>
+                <button>7</button>
+                <button>8</button>
+                <button>9</button>
+                <button>10</button>
+                <button class="correct">11</button>
+                <button>12</button>
+                <button>13</button>
+                <button>14</button>
+                <button>15</button>
+                <button>16</button>
+                <button>17</button>
+                <button>18</button>
+                <button>19</button>
+                <button>20</button>
+            </div>
+            <p class="tieude">Lưu ý:Đây là danh sách câu hỏi bạn có thể sử dụng để điều hướng.</p>
+        </div>
+
+        <!-- Content -->
+        <div class="content">
+            <div class="question-box">
+                <div class="head">
+                    <h1>Khoa học máy tính</h1>
+                    <div class="timer-container">
+                        <p>Thời gian: <span id="total-time">25</span> phút</p>
+                        <p>Còn lại: <span id="countdown">25:00</span> phút</p>
+                    </div>
+                </div>
+                <div>
+
+                </div>
+                <h4>Câu hỏi 1 trên 20:</h4>
+                <p>Which is the part of the computer system that one can physically touch?</p>
+                <div class="question-options">
+                    <label><input type="checkbox" /> Data</label>
+                    <label><input type="checkbox" /> Operating systems</label>
+                    <label><input type="checkbox" /> Hardware</label>
+                    <label><input type="checkbox" /> Software</label>
+                </div>
+
+            </div>
+            <div class="question-footer">
+
+                <button class="btn-success">Hoàn thành</button>
+                <div class="btn-footer">
+                    <button class="btn-secondary">Trước</button>
+                    <button class="btn-primary">Tiếp</button>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+
+    <footer class="footer">
+        <p>© 2025 Quiz App. All rights reserved.</p>
+    </footer>
+    <script src="../js/dashboard.js"></script>
+</body>
+
+</html>

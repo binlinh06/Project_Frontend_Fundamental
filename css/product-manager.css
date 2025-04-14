@@ -244,108 +244,6 @@ td {
 .table tr.even-row {
     background-color: #DEE2E6; /* Áp dụng màu này ngay khi tạo hàng */
 }
-.change-test {
-    position: fixed;
-    top: 33%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: #FFFFFF;
-    box-shadow:
-        0px 8px 8px -4px #10182808,
-        0px 20px 24px -4px #10182814;
-    border-radius: 8px;
-    width: 480px;
-    min-height: 460px; /* giữ chiều cao tối thiểu */
-    height: auto; /* cho phép tăng theo nội dung */
-    max-height: 90vh; /* tránh vượt khỏi màn hình */
-}
-
-.change-test .change-head {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-top: 10px;
-    padding-left: 17px;
-    padding-bottom: 18px;
-    font-weight: 500;
-    font-size: 23.3px;
-    line-height: 30px;
-    letter-spacing: 0px;
-    border-bottom: 1px solid #caccce;
-}
-
-.change-test .change-head button {
-    padding-right: 22px;
-    color: #818181;
-    border: none;
-    background-color: white;
-    font-size: 40px;
-}
-
-.change-test .change-main {
-    border-bottom: 1px solid #caccce;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    padding: 15px 24px;
-    padding-bottom: 30px;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 14px;
-    letter-spacing: 0px;
-    color: #344054;
-}
-
-.change-test .change-main input {
-    padding: 10px 14px;
-    border-radius: 8px;
-    border: 1px solid #D0D5DD;
-}
-
-.change-test .change-main select {
-    padding: 10px 14px;
-    border-radius: 8px;
-    border: 1px solid #D0D5DD;
-}
-
-.change-test .change-footer{
-    padding-top: 12px;
-    display: flex;
-    justify-content: end;
-    gap: 16px;
-    padding-right: 24px;
-    padding-bottom: 12px;
-    
-}
-
-.change-test .change-footer button {
-    color: white;
-    padding: 8px 15px;
-    border-radius: 8px;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 14px;
-    letter-spacing: 0px;
-    transition: 0.3s;
-}
-
-.change-test .change-footer .btn-huy {
-    background-color: #6C757D;
-    border: 1px solid #6C757D;
-}
-
-.change-test .change-footer .btn-huy:hover{
-    transform: scale(1.2);
-}
-
-.change-test .change-footer .btn-luu {
-    background-color: #0D6EFD;
-    border: 1px solid #0D6EFD;
-}
-
-.change-test .change-footer .btn-luu:hover{
-    transform: scale(1.2);
-}
 
 .delete-test {
     position: fixed;
@@ -483,16 +381,10 @@ td {
 }
 
 /* Ẩn form thêm danh mục mặc định */
-.change-test, .delete-test {
+.delete-test {
     display: none;
     z-index: 1000; /* Đảm bảo nằm trên overlay */
 }
-
-/* Hiển thị form khi có class active */
-.change-test.active {
-    display: block;
-}
-
 .delete-test.active {
     display: block;
 }

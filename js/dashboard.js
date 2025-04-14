@@ -110,7 +110,7 @@ function renderTests() {
               <li>${test.emoji} ${test.category}</li>
               <li>${test.title}</li>
               <li>${test.questionCount} câu hỏi - ${test.playCount} lượt chơi</li>
-              <li><button>Chơi</button></li>
+              <li><button onclick="window.location.href='./play.html'">Chơi</button></li>
             </ul>
           </div>
         </div>

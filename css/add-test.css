@@ -328,6 +328,8 @@ td {
     /* cho phép tăng theo nội dung */
     max-height: 90vh;
     /* tránh vượt khỏi màn hình */
+    display: flex;
+    flex-direction: column;
 }
 
 .add-test .add-head {
@@ -616,4 +618,24 @@ td {
     font-size: 14.85px;
     line-height: 24px;
     letter-spacing: 0px;
+}
+
+/* Định dạng chung cho thông báo lỗi */
+.add-main input.error {
+    border: 1px solid #DC3545;
+    background-color: #F8D7DA;
+}
+
+.error-message {
+    color: #DC3545;
+    font-size: 14px;
+    margin-top: 4px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.error-message.show {
+    opacity: 1;
+    visibility: visible;
 }

@@ -135,7 +135,7 @@ document.addEventListener("DOMContentLoaded", function () {
             Swal.fire({
                 position: "center",
                 icon: "success",
-                title: "Sửa thành công!",
+                title: "Lưu thành công!",
                 showConfirmButton: false,
                 timer: 1000
             });
@@ -203,5 +203,3 @@ function hideError(input) {
     errorElement.classList.remove("show");
     input.classList.remove("error");
 }
-
-

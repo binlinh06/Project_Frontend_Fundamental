@@ -25,7 +25,7 @@
 
     <section class="main">
         <div class="abc">
-            <h3>Tạo bài test</h3>
+            <h3 id="h">Tạo bài test</h3>
             <div class="function">
                 <div class="function-child-1">
                     <label for="">Tên bài test</label>
@@ -46,9 +46,9 @@
             </div>
             <h4>Quản lý câu hỏi</h4>
             <div class="btn">
-                <button class="btn-add"> Thêm câu hỏi</button>
-                <button class="btn-save">Lưu</button>
-            </div>
+                <button class="btn-add" id="btn-add"> Thêm câu hỏi</button>
+                <button class="btn-save" id="btn-save">Lưu</button>
+            </div>  
             <table class="table">
                 <thead>
                     <tr>
@@ -57,49 +57,8 @@
                         <th>Hành động</th>
                     </tr>
                 </thead>
-                <tbody id="categoryTable">
-                    <tr>
-                        <td>1</td>
-                        <td>What is the capital of France?</td>
-                        <td> <button class="btn-change">Sửa</button>
-                            <button class="btn-delete">Xóa</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>Which planet is known as the Red Planet?</td>
-                        <td> <button class="btn-change">Sửa</button>
-                            <button class="btn-delete">Xóa</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>Which planet is known as the Red Planet?</td>
-                        <td> <button class="btn-change">Sửa</button>
-                            <button class="btn-delete">Xóa</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>4</td>
-                        <td>Which planet is known as the Red Planet?</td>
-                        <td> <button class="btn-change">Sửa</button>
-                            <button class="btn-delete">Xóa</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>5</td>
-                        <td>Which planet is known as the Red Planet?</td>
-                        <td> <button class="btn-change">Sửa</button>
-                            <button class="btn-delete">Xóa</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>6</td>
-                        <td>Which planet is known as the Red Planet?</td>
-                        <td> <button class="btn-change">Sửa</button>
-                            <button class="btn-delete">Xóa</button>
-                        </td>
-                    </tr>
+                <tbody id="questionTable">
+
                 </tbody>
             </table>
         </div>
@@ -116,57 +75,17 @@
             <div class="question-section">
                 <label for="test-question">Câu hỏi</label>
                 <input type="text" id="test-question" placeholder="Nhập câu hỏi" />
+                <span class="error-message" id="error-message-name"></span>
             </div>
             <div class="answer-section">
                 <label>Câu trả lời</label>
-                <div id="answer-list">
-                    <div class="answer-item">
-                        <div class="checkbox-wrapper">
-                            <input type="checkbox" class="answer-checkbox" />
-                        </div>
-                        
-                        <div class="input-wrapper">
-                            <input type="text" placeholder="Nhập câu trả lời" class="answer-input" />
-                            <button class="delete-btn" onclick="removeAnswer(this)"><img src="../assets/icons/Trash_Full.png" alt=""></button>
-                        </div>
-                    </div>
-                    <div class="answer-item">
-                        <div class="checkbox-wrapper">
-                            <input type="checkbox" class="answer-checkbox" />
-                        </div>
-                        
-                        <div class="input-wrapper">
-                            <input type="text" placeholder="Nhập câu trả lời" class="answer-input" />
-                            <button class="delete-btn" onclick="removeAnswer(this)"><img src="../assets/icons/Trash_Full.png" alt=""></button>
-                        </div>
-                    </div>
-                    <div class="answer-item">
-                        <div class="checkbox-wrapper">
-                            <input type="checkbox" class="answer-checkbox" />
-                        </div>
-                        
-                        <div class="input-wrapper">
-                            <input type="text" placeholder="Nhập câu trả lời" class="answer-input" />
-                            <button class="delete-btn" onclick="removeAnswer(this)"><img src="../assets/icons/Trash_Full.png" alt=""></button>
-                        </div>
-                    </div>
-                    <div class="answer-item">
-                        <div class="checkbox-wrapper">
-                            <input type="checkbox" class="answer-checkbox" />
-                        </div>
-                        
-                        <div class="input-wrapper">
-                            <input type="text" placeholder="Nhập câu trả lời" class="answer-input" />
-                            <button class="delete-btn" onclick="removeAnswer(this)"><img src="../assets/icons/Trash_Full.png" alt=""></button>
-                        </div>
-                    </div>
-                </div>
-                <button class="add-btn-question" onclick="addAnswer()">Thêm câu trả lời</button>
+                <div id="answer-list"></div>
+                <button class="add-btn-question" id="btn-add-answer">Thêm câu trả lời</button>
             </div>
         </div>
         <div class="add-footer">
             <button class="btn-huy" id="btn-huy">Hủy</button>
-            <button class="btn-luu" id="btn-save">Lưu</button>
+            <button class="btn-luu" id="btn-save-question">Lưu</button>
         </div>
 
     </div>
